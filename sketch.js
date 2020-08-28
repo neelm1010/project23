@@ -14,8 +14,6 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	wall1=createSprite(500,590,20,100)
-	wall2=createSprite(300,590,20,100)
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
@@ -42,7 +40,8 @@ function setup() {
 
 
 	
-	
+	wall1=new Ground(500,590,20,100);
+	 wall2=new Ground(300,590,20,100);
 	ground1=new Ground(400,630,200,20);
 	
   console.log("display Package"+packageBody);
@@ -60,7 +59,8 @@ function draw() {
   packageSprite.x= packageBody.position.x
   packageSprite.y= packageBody.position.y 
 
- 
+   wall2.display();
+  wall1.display();
   ground1.display();
   drawSprites();
  
